@@ -73,7 +73,7 @@
             this.mostraCodiciToolStripMenuItem,
             this.pulisciCodiciToolStripMenuItem});
             this.visualizzaListaCodiciToolStripMenuItem.Name = "visualizzaListaCodiciToolStripMenuItem";
-            this.visualizzaListaCodiciToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.visualizzaListaCodiciToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.visualizzaListaCodiciToolStripMenuItem.Text = "Codici";
             // 
             // mostraCodiciToolStripMenuItem
@@ -93,7 +93,7 @@
             this.puToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mostraXMLToolStripMenuItem});
             this.puToolStripMenuItem.Name = "puToolStripMenuItem";
-            this.puToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.puToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.puToolStripMenuItem.Text = "XML";
             // 
             // mostraXMLToolStripMenuItem
@@ -114,14 +114,16 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // aiutoToolStripMenuItem
             // 
             this.aiutoToolStripMenuItem.Name = "aiutoToolStripMenuItem";
-            this.aiutoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.aiutoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aiutoToolStripMenuItem.Text = "Aiuto";
+            this.aiutoToolStripMenuItem.Click += new System.EventHandler(this.aiutoToolStripMenuItem_Click);
             // 
             // gpbStep1
             // 
