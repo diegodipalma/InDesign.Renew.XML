@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
+using System.Xml;
 
 namespace InDesign.Renew.XML
 {
@@ -16,7 +16,6 @@ namespace InDesign.Renew.XML
     {
         public const string CurrentVersion = "0.1b";
         public string CurrentOS = Environment.OSVersion.ToString();
-        public object xmlOriginale, xmlModificato;
         public const string CommonInDesignPath = @"C:\Program Files\Adobe\Adobe InDesign CC 2018\AMT";
         public Form1()
         {
@@ -25,11 +24,10 @@ namespace InDesign.Renew.XML
 
         private void btnGetCurrentCode_Click(object sender, EventArgs e)
         {
-            // Deserializzo l'xml e ne faccio una copia per sicurezza.
-            xmlOriginale = DeserializeXMLFileToObject<object>(Path.Combine(CommonInDesignPath, @"application.xml"));
-            xmlModificato = xmlOriginale;
-
-
+            XmlDocument docXML = new XmlDocument();
+            docXML.Load(Path.Combine(CommonInDesignPath, "application.xml"));
+            MessageBox.Show(docXML.SelectSingleNode("Configuration/Other/Data").Attributes["TrialSerialNumber"].ToString());
+            docXML.Save(Path.Combine(CommonInDesignPath, "application.xml"));
         }
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e) => MessageBox.Show("Quest'applicazione è stata realizzada da Diego Di Palma sotto licenza MIT.\n" +
@@ -40,24 +38,6 @@ namespace InDesign.Renew.XML
         {
             MessageBox.Show("1 - Premere il pulsante \"Get current code\" per caricare in memoria il codice che si sta utilizzando;\n" +
                 "2 - ");
-        }
-
-        public static T DeserializeXMLFileToObject<T>(string XmlFilename)
-        {
-            T returnObject = default(T);
-            if (string.IsNullOrEmpty(XmlFilename)) return default(T);
-
-            try
-            {
-                StreamReader xmlStream = new StreamReader(XmlFilename);
-                XmlSerializer serializer = new XmlSerializer(typeof(T));
-                returnObject = (T)serializer.Deserialize(xmlStream);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Errore nel recuperare il file XML!");
-            }
-            return returnObject;
         }
     }
 }

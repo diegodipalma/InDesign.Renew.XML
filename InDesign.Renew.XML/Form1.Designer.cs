@@ -87,7 +87,7 @@
             this.pulisciCodiciToolStripMenuItem.Name = "pulisciCodiciToolStripMenuItem";
             this.pulisciCodiciToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.pulisciCodiciToolStripMenuItem.Text = "Pulisci codici";
-            // 
+            //
             // puToolStripMenuItem
             // 
             this.puToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
