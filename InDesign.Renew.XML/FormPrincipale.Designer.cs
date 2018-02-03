@@ -1,6 +1,6 @@
 ﻿namespace InDesign.Renew.XML
 {
-    partial class Form1
+    partial class FormPrincipale
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizzaListaCodiciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +44,11 @@
             this.pgbLoadCurrentCode = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnGetCurrentCode = new System.Windows.Forms.Button();
+            this.cmsExit = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gpbStep1.SuspendLayout();
+            this.cmsExit.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,7 +58,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(477, 24);
+            this.menuStrip1.ShowItemToolTips = true;
+            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +92,7 @@
             this.pulisciCodiciToolStripMenuItem.Name = "pulisciCodiciToolStripMenuItem";
             this.pulisciCodiciToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.pulisciCodiciToolStripMenuItem.Text = "Pulisci codici";
-            //
+            // 
             // puToolStripMenuItem
             // 
             this.puToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,14 +119,14 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // aiutoToolStripMenuItem
             // 
             this.aiutoToolStripMenuItem.Name = "aiutoToolStripMenuItem";
-            this.aiutoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aiutoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aiutoToolStripMenuItem.Text = "Aiuto";
             this.aiutoToolStripMenuItem.Click += new System.EventHandler(this.aiutoToolStripMenuItem_Click);
             // 
@@ -172,20 +177,40 @@
             this.btnGetCurrentCode.UseVisualStyleBackColor = true;
             this.btnGetCurrentCode.Click += new System.EventHandler(this.btnGetCurrentCode_Click);
             // 
-            // Form1
+            // cmsExit
+            // 
+            this.cmsExit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.esciToolStripMenuItem});
+            this.cmsExit.Name = "cmsExit";
+            this.cmsExit.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmsExit.ShowImageMargin = false;
+            this.cmsExit.Size = new System.Drawing.Size(70, 26);
+            // 
+            // esciToolStripMenuItem
+            // 
+            this.esciToolStripMenuItem.Name = "esciToolStripMenuItem";
+            this.esciToolStripMenuItem.Size = new System.Drawing.Size(69, 22);
+            this.esciToolStripMenuItem.Text = "Esci";
+            // 
+            // FormPrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 330);
+            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.ContextMenuStrip = this.cmsExit;
             this.Controls.Add(this.gpbStep1);
             this.Controls.Add(this.menuStrip1);
+            this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormPrincipale";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "XML Renewer";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gpbStep1.ResumeLayout(false);
             this.gpbStep1.PerformLayout();
+            this.cmsExit.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +233,8 @@
         private System.Windows.Forms.ProgressBar pgbLoadCurrentCode;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnGetCurrentCode;
+        private System.Windows.Forms.ContextMenuStrip cmsExit;
+        private System.Windows.Forms.ToolStripMenuItem esciToolStripMenuItem;
     }
 }
 

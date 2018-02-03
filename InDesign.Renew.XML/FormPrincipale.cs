@@ -12,12 +12,12 @@ using System.Xml;
 
 namespace InDesign.Renew.XML
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipale : Form
     {
         public const string CurrentVersion = "0.1b";
         public string CurrentOS = Environment.OSVersion.ToString();
         public const string CommonInDesignPath = @"C:\Program Files\Adobe\Adobe InDesign CC 2018\AMT";
-        public Form1()
+        public FormPrincipale()
         {
             InitializeComponent();
         }
