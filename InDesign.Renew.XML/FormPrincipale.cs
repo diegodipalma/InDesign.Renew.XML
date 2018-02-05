@@ -25,8 +25,8 @@ namespace InDesign.Renew.XML
         private void btnGetCurrentCode_Click(object sender, EventArgs e)
         {
             XmlDocument docXML = new XmlDocument();
-            docXML.Load(Path.Combine(CommonInDesignPath, "application.xml"));
-            MessageBox.Show(docXML.SelectSingleNode("Configuration/Other/Data").Attributes["TrialSerialNumber"].ToString());
+            docXML.Load(filename: @"C:\Program Files\Adobe\Adobe InDesign CC 2018\AMT\application.xml");
+            MessageBox.Show(docXML.SelectSingleNode("//configuration/payload/other/data").ToString());
             docXML.Save(Path.Combine(CommonInDesignPath, "application.xml"));
         }
 
